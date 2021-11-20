@@ -6,41 +6,31 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Stars</dt>
-      <!-- Display stars start -->
       <dd><%= review.stars %></dd>
-      <!-- Display stars end -->
 
       <dt>Review text</dt>
-      <!-- Display review_text start -->
       <dd><%= review.review_text %></dd>
-      <!-- Display review_text end -->
 
       <dt>Movie</dt>
-      <!-- Display movie_id start -->
       <dd>
         <% if @review.movie.present? %>
           <%= link_to review.movie, review.movie %>
         <% end %>
       </dd>
-      <!-- Display movie_id end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @review.user.present? %>
           <%= link_to review.user, review.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Director</dt>
-      <!-- Display director_id start -->
       <dd>
         <% if @review.director.present? %>
           <%= link_to review.director, review.director %>
         <% end %>
       </dd>
-      <!-- Display director_id end -->
 
     </dl>
 
@@ -49,7 +39,6 @@
         <%= link_to_show_or_back review, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link review start -->
       <div class="col">
         <% if current_director == @review.director %>
           <%= link_to edit_review_url(review), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -57,9 +46,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link review end -->
 
-      <!-- Delete link review start -->
       <div class="col">
         <% if current_director == @review.director %>
           <%= link_to review, method: :delete, data: { confirm: "Do you really want to delete this review?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -67,7 +54,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link review end -->
     </div>
   </div>
 
