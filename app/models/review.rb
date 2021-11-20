@@ -16,5 +16,4 @@ class Review < ApplicationRecord
   def to_s
     stars
   end
-
 end

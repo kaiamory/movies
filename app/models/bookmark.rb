@@ -2,7 +2,7 @@ class Bookmark < ApplicationRecord
   # Direct associations
 
   belongs_to :user,
-             :counter_cache => true
+             counter_cache: true
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class Bookmark < ApplicationRecord
   def to_s
     movie_name
   end
-
 end
