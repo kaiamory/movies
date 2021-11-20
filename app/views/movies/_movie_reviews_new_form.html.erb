@@ -39,13 +39,9 @@
   <!-- Label and input for user_id end -->
 
   <!-- Label and input for director_id start -->
-  <div class="form-group">
-    <%= f.label :director_id %>
-
-    <!-- Input for director_id start -->
-    <%= f.collection_select :director_id, Director.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for director_id end -->
-  </div>
+  <!-- Input for "director_id" start -->
+  <%= f.hidden_field :director_id, value: current_director.id %>
+  <!-- Input for "director_id" end -->
   <!-- Label and input for director_id end -->
 
   <%= f.submit "Create review", class: "btn btn-block btn-outline-secondary" %>
