@@ -1,0 +1,135 @@
+<% was_validated = review.errors.any? %>
+
+<%= form_with(model: review, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for stars start -->
+  <div class="form-group">
+    <% star_class = "form-control" %>
+    <% star_was_invalid = review.errors.include?(:star) %>
+
+    <% if was_validated %>
+      <% if star_was_invalid %>
+        <% star_class << " is-invalid" %>
+      <% else %>
+        <% star_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :stars %>
+    <!-- Input for stars start -->
+    <%= f.number_field :stars, class: star_class, placeholder: "Enter star" %>
+    <!-- Input for stars end -->
+    <% if star_was_invalid %>
+      <% review.errors.full_messages_for(:star).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for stars end -->
+  <!-- Label and input for review_text start -->
+  <div class="form-group">
+    <% review_text_class = "form-control" %>
+    <% review_text_was_invalid = review.errors.include?(:review_text) %>
+
+    <% if was_validated %>
+      <% if review_text_was_invalid %>
+        <% review_text_class << " is-invalid" %>
+      <% else %>
+        <% review_text_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :review_text %>
+    <!-- Input for review_text start -->
+    <%= f.text_field :review_text, class: review_text_class, placeholder: "Enter review text" %>
+    <!-- Input for review_text end -->
+    <% if review_text_was_invalid %>
+      <% review.errors.full_messages_for(:review_text).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for review_text end -->
+  <!-- Label and input for movie_id start -->
+  <div class="form-group">
+    <% movie_class = "form-control" %>
+    <% movie_was_invalid = review.errors.include?(:movie) %>
+
+    <% if was_validated %>
+      <% if movie_was_invalid %>
+        <% movie_class << " is-invalid" %>
+      <% else %>
+        <% movie_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :movie_id %>
+    <!-- Input for movie_id start -->
+    <%= f.number_field :movie_id, class: movie_class, placeholder: "Enter movie" %>
+    <!-- Input for movie_id end -->
+    <% if movie_was_invalid %>
+      <% review.errors.full_messages_for(:movie).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for movie_id end -->
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = review.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% review.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <!-- Label and input for director_id start -->
+  <div class="form-group">
+    <% director_class = "form-control" %>
+    <% director_was_invalid = review.errors.include?(:director) %>
+
+    <% if was_validated %>
+      <% if director_was_invalid %>
+        <% director_class << " is-invalid" %>
+      <% else %>
+        <% director_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :director_id %>
+    <!-- Input for director_id start -->
+    <%= f.number_field :director_id, class: director_class, placeholder: "Enter director" %>
+    <!-- Input for director_id end -->
+    <% if director_was_invalid %>
+      <% review.errors.full_messages_for(:director).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for director_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
