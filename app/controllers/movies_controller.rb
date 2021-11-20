@@ -8,6 +8,8 @@ class MoviesController < ApplicationController
 
   # GET /movies/1
   def show
+    @review = Review.new
+    @character = Character.new
   end
 
   # GET /movies/new

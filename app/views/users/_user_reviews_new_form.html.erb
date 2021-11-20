@@ -1,0 +1,52 @@
+<!-- Form review start -->
+<%= form_with(model: @review, local: true) do |f| %>
+<!-- Form review end -->
+
+  <!-- Label and input for stars start -->
+  <div class="form-group">
+    <%= f.label :stars %>
+
+    <!-- Input for stars start -->
+    <%= f.text_field :stars, class: "form-control" %>
+    <!-- Input for stars end -->
+  </div>
+  <!-- Label and input for stars end -->
+
+  <!-- Label and input for review_text start -->
+  <div class="form-group">
+    <%= f.label :review_text %>
+
+    <!-- Input for review_text start -->
+    <%= f.text_field :review_text, class: "form-control" %>
+    <!-- Input for review_text end -->
+  </div>
+  <!-- Label and input for review_text end -->
+
+  <!-- Label and input for movie_id start -->
+  <div class="form-group">
+    <%= f.label :movie_id %>
+
+    <!-- Input for movie_id start -->
+    <%= f.text_field :movie_id, class: "form-control" %>
+    <!-- Input for movie_id end -->
+  </div>
+  <!-- Label and input for movie_id end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for director_id start -->
+  <div class="form-group">
+    <%= f.label :director_id %>
+
+    <!-- Input for director_id start -->
+    <%= f.text_field :director_id, class: "form-control" %>
+    <!-- Input for director_id end -->
+  </div>
+  <!-- Label and input for director_id end -->
+
+  <%= f.submit "Create review", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

@@ -8,6 +8,7 @@ class DirectorsController < ApplicationController
 
   # GET /directors/1
   def show
+    @review = Review.new
   end
 
   # GET /directors/new
