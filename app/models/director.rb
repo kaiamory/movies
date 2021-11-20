@@ -1,5 +1,7 @@
 class Director < ApplicationRecord
-  # Direct associations
+  
+  include JwtToken
+# Direct associations
 
   has_many   :reviews,
              :dependent => :destroy
