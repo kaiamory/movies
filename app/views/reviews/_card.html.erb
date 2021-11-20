@@ -17,17 +17,29 @@
 
       <dt>Movie</dt>
       <!-- Display movie_id start -->
-      <dd><%= review.movie_id %></dd>
+      <dd>
+        <% if @review.movie.present? %>
+          <%= link_to review.movie, review.movie %>
+        <% end %>
+      </dd>
       <!-- Display movie_id end -->
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= review.user_id %></dd>
+      <dd>
+        <% if @review.user.present? %>
+          <%= link_to review.user, review.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Director</dt>
       <!-- Display director_id start -->
-      <dd><%= review.director_id %></dd>
+      <dd>
+        <% if @review.director.present? %>
+          <%= link_to review.director, review.director %>
+        <% end %>
+      </dd>
       <!-- Display director_id end -->
 
     </dl>
